@@ -9,6 +9,9 @@ This project focuses on developing a Chess AI using TensorFlow within the scope 
 ---
 
 ## Contents
+### Powerpoint Presentation
+`Power-Point Presentation.pptx` contains the presentation that was done during the final project
+
 ### Jupyter Notebooks
 1. **checkmate_generator.ipynb**
    - *Purpose*: Generates datasets in CSV format with final chessboard positions and labels (0 for draw, 1 for white's checkmate, -1 for black's checkmate).
