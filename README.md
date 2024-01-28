@@ -24,7 +24,7 @@ This project focuses on developing a Chess AI using TensorFlow within the scope 
 
 3. **reinforcement_trainer.ipynb**
    - *Purpose*: Records the entire sequence of board positions from start to end for each game.
-   - *Challenge*: High computational demand limited the generation of a substantial training dataset.
+   - *Challenge*: High computational demand limited the generation of a substantial training dataset. So, the model with reinforcement learning could not be implemented.
 
 ---
 
