@@ -1,32 +1,39 @@
 # opencampus-chess
-A Chess-AI Project done for course "Machine Learning with Tensorflow"
-Overview
+### A Chess-AI Project for "Machine Learning with Tensorflow"
 
-This project focuses on developing a Chess AI using machine learning techniques. It comprises three Jupyter Notebook files and two datasets, which are integral to the functioning and training of the AI model.
-File Descriptions
+---
 
-    checkmate_generator.ipynb:
-        Functionality: Generates datasets in CSV format.
-        Data: Final positions on a chessboard with labels (0 for draw, 1 for white's checkmate, -1 for black's checkmate).
-        Output Files:
-            1-200000_game.zip: Contains the generated data (zipped due to GitHub's file size limitations).
-            1-model_200000_game_stat.csv: Statistical analysis of each game played during dataset generation.
+## Overview
+This project focuses on developing a Chess AI using TensorFlow within the scope of a machine learning course. It includes three Jupyter Notebooks and two datasets integral to the AI's training and evaluation.
 
-    This notebook simulates chess games played against itself, capturing the final board positions and outcomes. After simulating 200,000 games, the data is balanced to ensure an equal proportion of wins, losses, and draws.
+---
 
-    checkmate_trainer.ipynb:
-        Functionality: Trains a Convolutional Neural Network (CNN) model using the dataset from checkmate_generator.ipynb.
-        Highlights: The notebook includes model evaluation and testing, showcasing both correct and incorrect model predictions.
+## Contents
+### Jupyter Notebooks
+1. **checkmate_generator.ipynb**
+   - *Purpose*: Generates datasets in CSV format with final chessboard positions and labels (0 for draw, 1 for white's checkmate, -1 for black's checkmate).
+   - *Datasets Generated*:
+     - `1-200000_game.zip`: Zipped to meet GitHub's file size constraints.
+     - `1-model_200000_game_stat.csv`: Provides statistical analysis of games played during the dataset generation.
 
-    reinforcement_trainer.ipynb:
-        Functionality: Unlike checkmate_generator, this notebook records the entire sequence of board positions from the start to the end of each game.
-        Process: The model is intermittently trained after every 10 games using these sequences.
+   This notebook simulates chess games played against itself, recording the final positions and outcomes. The dataset is balanced to ensure an equal proportion of wins, losses, and draws.
 
-    However, due to the extensive computational demand (each game requiring the evaluation of approximately 9,000 board positions for a single move prediction), the dataset for effective training could not be generated with the available computational resources.
+2. **checkmate_trainer.ipynb**
+   - *Purpose*: Trains a CNN model using the dataset from `checkmate_generator.ipynb`.
+   - *Highlights*: Includes model evaluation and testing, demonstrating correct and incorrect model predictions.
 
-Future Improvements
+3. **reinforcement_trainer.ipynb**
+   - *Purpose*: Records the entire sequence of board positions from start to end for each game.
+   - *Challenge*: High computational demand limited the generation of a substantial training dataset.
 
-To enhance this project:
+---
 
-    Parallel Processing: Implement parallel game simulations to speed up dataset generation.
-    Model Optimization: Simplify the CNN model to reduce computational load without significantly compromising prediction accuracy.
+## Challenges and Future Directions
+- **Dataset Generation**: The high computational demand for evaluating board positions posed a significant challenge in generating a comprehensive dataset.
+- **Future Improvements**:
+  - Implement parallel processing for accelerated dataset generation.
+  - Simplify the CNN model to reduce computational requirements while maintaining accuracy.
+
+---
+
+Contributions and suggestions for project improvement are highly welcomed!
