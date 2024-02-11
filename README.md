@@ -1,7 +1,6 @@
 # opencampus-chess
 ### A Chess-AI Project for "Machine Learning with Tensorflow"
-Submitted By: Dikshyant Acharya
-Submitted to: Florian Schlösser
+
 ---
 
 ## Overview
@@ -85,5 +84,10 @@ A bug was identified where, very rarely, a move is mapped beyond the scope of av
 
 This project represents an initial step towards creating a chess-playing AI through reinforcement learning. Despite the model's current limitations, it demonstrates promising capabilities in learning and applying basic chess strategies. Continued development, focused on enhancing the model's exposure to a variety of game outcomes and strategic depth, will be crucial in overcoming the current challenges and achieving a more competitive level of play.
 
+## Submission Details
+
+- **Submitted By:** Dikshyant Acharya
+- **Submitted On:** 2024-02-11
+- **Submitted To:** Florian Schlösser
 
 Contributions and suggestions for project improvement are highly welcomed!
