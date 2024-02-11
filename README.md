@@ -4,7 +4,7 @@
 ---
 
 ## Overview
-This project focuses on developing a Chess AI using TensorFlow within the scope of a machine learning course. It includes three Jupyter Notebooks and two datasets integral to the AI's training and evaluation.
+This project focuses on developing a Chess AI using TensorFlow within the scope of a machine learning course. It includes three Jupyter Notebooks and two datasets integral to the AI's training and evaluation. The checkmate_generator and checkmate_trainer is a tryout models to see, if the usage of the representation of the board into array into neural network can be tranied to make desire move or not. This turned out to be ture, so a simple AI having initially 0 knowledge of chess is being made using Deep Reinforcement Learning.
 
 ---
 
@@ -53,14 +53,14 @@ The value function assigns a score to the board positions at the end of the game
 - **0** for a draw,
 - **-1** for a loss for White,
 - **+1** for a win for White,
-- **+0.25** if the game is drawn but White has a material advantage,
-- **-0.25** if the game is drawn but Black has a material advantage.
+- **+0.25** if the game is drawn but White has a material advantage of +5,
+- **-0.25** if the game is drawn but Black has a material advantage of -5.
 
-These scores are then adjusted using a discount factor to reflect the value of positions leading up to the game's conclusion, ensuring that each move's value reflects its contribution to the overall game outcome.
+These scores are then adjusted using a discount factor to reflect the value of positions leading up to the game's conclusion, ensuring that each move's value reflects its contribution to the overall game outcome. For instance, if white has won the game, then the final board position will have value of +1 and it decreases with each preceeding move such that when it reaches to the start of the position, it finally reaches near 0 (but have slightly positive valve). Same is applied from blacks perspective. If a game is drawn, all the move leading to that position is maked as drawn.
 
 ### Training and Evaluation
 
-After training on 100 simulated games, the model was tested against a player making random moves. The results indicated that the model had learned basic strategies such as capturing pieces and promoting pawns without being explicitly programmed to do so. However, the model struggled to achieve checkmate, primarily due to the training data being heavily skewed towards draw outcomes rather than decisive victories or losses.
+After training on 50 simulated games, the model was trained and then tested against a player making random moves. The results indicated that the model had learned basic strategies such as capturing pieces and promoting pawns without being explicitly programmed to do so. However, the model struggled to achieve checkmate, primarily due to the training data being heavily skewed towards draw outcomes rather than decisive victories or losses. So, it simply made repetative move after the capture of the pieces. 
 
 ### Observations and Future Work
 
