@@ -1,6 +1,7 @@
 # opencampus-chess
 ### A Chess-AI Project for "Machine Learning with Tensorflow"
-
+Submitted By: Dikshyant Acharya
+Submitted to: Florian Schlösser
 ---
 
 ## Overview
