@@ -25,18 +25,51 @@ This project focuses on developing a Chess AI using TensorFlow within the scope 
    - *Purpose*: Trains a CNN model using the dataset from `checkmate_generator.ipynb`.
    - *Highlights*: Includes model evaluation and testing, demonstrating correct and incorrect model predictions.
 
-3. **reinforcement_trainer.ipynb**
-   - *Purpose*: Records the entire sequence of board positions from start to end for each game.
-   - *Challenge*: High computational demand limited the generation of a substantial training dataset. So, the model with reinforcement learning could not be implemented.
+# Simple Reinforcement Learning Model for Chess
 
----
+This project aims to develop a reinforcement learning model for playing chess. The model is built using a Convolutional Neural Network (CNN) that processes chessboard positions and outputs policy and value predictions to guide decision-making during a game.
 
-## Challenges and Future Directions
-- **Dataset Generation**: The high computational demand for evaluating board positions posed a significant challenge in generating a comprehensive dataset.
-- **Future Improvements**:
-  - Implement parallel processing for accelerated dataset generation.
-  - Simplify the CNN model to reduce computational requirements while maintaining accuracy.
+## Overview
 
----
+The reinforcement learning model operates on a multi-dimensional array representation of the chessboard. Each square on the board is encoded into a 17-dimensional vector using one-hot encoding to represent the piece on the square, castling rights, and the player's turn. This results in an 8x8x17 input tensor for the CNN.
+
+### Model Components
+
+- **Board Representation**: The chessboard is converted into a multi-dimensional array where each square is described by a 17-dimensional vector.
+- **Convolutional Neural Network**: Takes the board position as input and outputs a policy and value.
+  - **Policy**: A distribution over 4672 possible chess moves, based on the current square, move distance, direction, and piece type.
+  - **Value**: Indicates the winning chances for each side from the current board position.
+
+### Model Logic
+
+1. **Data Generation**: Utilizes the policy output for exploration vs. exploitation, generating game data.
+2. **Move Selection**: Employs an 85-15 rule for choosing moves based on their probability to balance between exploiting known strategies and exploring new positions.
+3. **Value Function**: Assigns values to game outcomes (win, loss, draw) and distributes these values back through the move sequence, adjusting for piece strength in drawn positions.
+
+### Training and Evaluation
+
+The model was trained on 100 game simulations and then evaluated by playing against a baseline opponent making random moves. Initial observations showed the model learned basic strategies like piece capture and pawn promotion but struggled with achieving checkmate due to a lack of training data featuring checkmate outcomes.
+
+### Future Directions
+
+Improvements could include:
+- Generating more diverse training data with a higher incidence of checkmate.
+- Integrating a Monte Carlo Tree Search for deeper lookahead.
+- Refining the policy network to prioritize moves leading to higher value outcomes.
+
+## Getting Started
+
+### Prerequisites
+
+- Python 3.x
+- Jupyter Notebook
+- Required Python libraries: `numpy`, `tensorflow`, `keras`
+
+### Installation
+
+1. Clone the repository:
+   ```bash
+   git clone <repository-url>
+
 
 Contributions and suggestions for project improvement are highly welcomed!
