@@ -4,7 +4,7 @@
 ---
 
 ## Overview
-This project focuses on developing a Chess AI using TensorFlow within the scope of a machine learning course. It includes three Jupyter Notebooks and two datasets integral to the AI's training and evaluation. The checkmate_generator and checkmate_trainer is a tryout models to see, if the usage of the representation of the board into array into neural network can be tranied to make desire move or not. This turned out to be ture, so a simple AI having initially 0 knowledge of chess is being made using Deep Reinforcement Learning.
+This project focuses on developing a Chess AI using TensorFlow within the scope of a machine learning course. It includes three Jupyter Notebooks (1 is in google cola, link is mentioned below) and 1 dataset integral to the AI's training and evaluation. The checkmate_generator.ipynb and checkmate_trainer.ipynb is a tryout models to see, if the representation of the board can be tranied into neural network  to make desire move . This turned out to be ture, so a simple AI having initially 0 knowledge of chess is trained using Deep Reinforcement Learning where it learns some key component of game, like importance of piece capture, pawn movement etc.
 
 ---
 
