@@ -29,7 +29,7 @@ For the conversion of the chess representation. I took the idea from "[Geohot tw
    - *Highlights*: Includes model evaluation and testing, demonstrating correct and incorrect model predictions.
 
 # Simple Reinforcement Learning Model for Chess
-This project is hosted on Google Colab and can be accessed [here](https://colab.research.google.com/drive/1Ga5Dh5zpevrn3l301Mh45pHvEUCI_r-w?usp=sharing#scrollTo=3guW_3NLrNoU). At the end, there's a demonstration of gameplay using the model developed, so registration in Colab is necessary to view the full game. All methods are thoroughly commented to provide clear understanding. Read the description below for insights into why and how the concepts were implemented.
+This project is done on Google Colab and can be accessed [here](https://colab.research.google.com/drive/1Ga5Dh5zpevrn3l301Mh45pHvEUCI_r-w?usp=sharing#scrollTo=3guW_3NLrNoU). At the end, there's a demonstration of gameplay using the model developed, so registration in Colab is necessary to view the full game. All methods are thoroughly commented to provide clear understanding. Read the description below for insights into why and how the concepts were implemented.
 
 
 ## Introduction
@@ -65,7 +65,7 @@ These scores are then adjusted using a discount factor to reflect the value of p
 
 ### Training and Evaluation
 
-After training on 50 simulated games, the model was trained and then tested against a player making random moves. The results indicated that the model had learned basic strategies such as capturing pieces and promoting pawns without being explicitly programmed to do so. However, the model struggled to achieve checkmate, primarily due to the training data being heavily skewed towards draw outcomes rather than decisive victories or losses. So, it simply made repetative move after the capture of the pieces. 
+After training on 50 simulated games (about 3000 chess position), the model was trained and then tested against a player making random moves. The results indicated that the model had learned basic strategies such as capturing pieces and promoting pawns without being explicitly programmed to do so. However, the model struggled to achieve checkmate, primarily due to the training data being heavily skewed towards draw outcomes rather than decisive victories or losses. So, it simply made repetative move after the capture of the pieces. 
 
 ### Hyper Paramater tuning
 The model was tested with various learning rates, batch sizes, and epochs, but these changes did not significantly affect the results. Consequently, an epoch of 10 was selected, with a learning rate of 1e-3 and a batch size of 3. The main factor that influenced the game's outcome was the number of positions available in the datasets, as well as the layers of the Convolutional Neural Network (CNN). A compromise had to be made regarding the CNN's filters. Increasing the number of filters improved the accuracy of the policy, but it also required more time to compute each board position to complete a game. Therefore, a choice was made to ensure the model could learn effectively while remaining computationally efficient. CNN was chosen because it demonstrated strong performance during the testing of the checkmate-trainer.
