@@ -54,7 +54,8 @@ Data generation for training the model utilizes a balance between exploration an
 
 ### Value Function
 
-The value function assigns a score to the board positions at the end of the game. The scoring is as follows:
+The value function estimates a score of the board positions.
+At the end of the game, the scoring is done as follows:
 - **0** for a draw,
 - **-1** for a loss for White,
 - **+1** for a win for White,
