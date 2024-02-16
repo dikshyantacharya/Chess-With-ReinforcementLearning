@@ -1,4 +1,4 @@
-# opencampus-chess
+# Chess With Reinforcement Learning
 ### A Chess-AI Project for "Machine Learning with Tensorflow"
 
 ---
